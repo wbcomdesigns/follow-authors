@@ -1,0 +1,112 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+.follow-button.follow-button {
+    margin-left: 5px !important;
+}
+.friendship-button.generic-button {
+    float: left !important;
+}
+/*WBF Following Posts*/
+.wbf-col6.wbf-img-col {
+    padding: 0px;
+    margin-top: 0px;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    /*    padding-left: 15px;
+        padding-right: 15px;*/
+}
+.wbf-col6.wbi-ytd-caption {
+    font-family: 'Oswald', sans-serif;
+    padding: 30px 15px 25px 35px;
+    float: left;
+    position: relative;
+    min-height: 1px;
+}
+
+.wbf-author-post .wbf-img-col img {
+    moz-box-shadow: 0 0 3px #888;
+    -webkit-box-shadow: 0 0 3px #888;
+    box-shadow: 0 0 3px #888;
+    max-width: 150px;
+    height: 150px;
+}
+
+.wbf-author-post .wbf-ytd-caption h2 {
+    color: #494848;
+    font-size: 26px;
+    line-height: 30px;
+    font-weight: 400;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.wbi-content .wbi-row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.wbf-authorpost {
+    padding-left: 0px;
+    width: 50%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.wbf-authorpost p{
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+.wbf-author-post {
+    margin-top: 15px;
+}
+
+/*Circular-thumbnail*/
+.wbf-circular {
+    margin: 25px;
+    float: left;
+    overflow: hidden;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+.wbf-circular img{
+    -webkit-transition: margin 1.5s ease;
+    -moz-transition: margin 1.5s ease;
+    -ms-transition: margin 1.5s ease;
+    -o-transition: margin 1.5s ease;
+    transition: margin 1.5s ease;
+}
+.wbf-authorpost-content {
+    color: #4D4B4B;
+}
+.wbf-following-post-author-title {
+    float: left;
+    width: 80.8%;
+}
+/*Circular-thumbnail*/
+.wbf-following-post-author-favorits-stop,.wbf-following-post-author-favorits-start {
+    padding: 3px;
+    width: 19.2%;
+    overflow: hidden;
+}
+.wbf-following-post-author-favorits-stop a,.wbf-following-post-author-favorits-start a{
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #767676;
+    font-size: small;
+    cursor: pointer;
+    outline: 0;
+    padding: 4px 10px;
+    text-align: center;
+    text-decoration: none;
+}
+.wbf-following-post-author-favorits-stop a:hover, .wbf-following-post-author-favorits-start a:hover {
+    background: #f3f1f1;
+}
+/*WBF Following Posts*/

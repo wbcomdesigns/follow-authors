@@ -1,0 +1,165 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP BP Follow\n"
+"POT-Creation-Date: 2017-07-27 17:32+0530\n"
+"PO-Revision-Date: 2017-07-27 17:32+0530\n"
+"Last-Translator: \n"
+"Language-Team: wbcom designs\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.3\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _e;__;_x\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/class-wp-bp-follow-actions.php:56
+msgid "Already following"
+msgstr ""
+
+#: includes/class-wp-bp-follow-actions.php:60
+msgid "Error following user"
+msgstr ""
+
+#: includes/class-wp-bp-follow-actions.php:103
+msgid "Not following"
+msgstr ""
+
+#: includes/class-wp-bp-follow-actions.php:107
+msgid "Error unfollowing user"
+msgstr ""
+
+#: includes/class-wp-bp-follow-activity-following-posts.php:21
+msgid "Post By: "
+msgstr ""
+
+#: includes/class-wp-bp-follow-activity-following-posts.php:25
+msgid "Remove Favourite"
+msgstr ""
+
+#: includes/class-wp-bp-follow-activity-following-posts.php:29
+msgid "Add Favourite"
+msgstr ""
+
+#: includes/class-wp-bp-follow-activity-following-posts.php:63
+msgid "by "
+msgstr ""
+
+#: includes/class-wp-bp-follow-activity-following-posts.php:80
+msgid "There is no posts from this user."
+msgstr ""
+
+#: includes/class-wp-bp-follow-activity-following-posts.php:87
+msgid "You have not following any user."
+msgstr ""
+
+#: includes/class-wp-bp-follow-core.php:48
+#: includes/class-wp-bp-follow-core.php:208
+#: includes/class-wp-bp-follow-core.php:258
+#: includes/class-wp-bp-follow-template-tags.php:106
+msgid "Follow"
+msgstr ""
+
+#: includes/class-wp-bp-follow-core.php:129
+#: includes/class-wp-bp-follow-hooks.php:103
+#: includes/class-wp-bp-follow-hooks.php:127
+#, php-format
+msgid "Following <span>%d</span>"
+msgstr ""
+
+#: includes/class-wp-bp-follow-core.php:139
+#, php-format
+msgid "Followers <span>%d</span>"
+msgstr ""
+
+#: includes/class-wp-bp-follow-core.php:152
+#: includes/class-wp-bp-follow-core.php:219
+#: includes/class-wp-bp-follow-core.php:266
+#: includes/class-wp-bp-follow-core.php:283
+msgid "Following"
+msgstr ""
+
+#: includes/class-wp-bp-follow-core.php:230
+#: includes/class-wp-bp-follow-core.php:274
+msgid "Followers"
+msgstr ""
+
+#: includes/class-wp-bp-follow-hooks.php:103
+msgid "The public activity for everyone you are following on this site."
+msgstr ""
+
+#: includes/class-wp-bp-follow-hooks.php:319
+msgid "You are following some users, but they haven't posted yet."
+msgstr ""
+
+#: includes/class-wp-bp-follow-hooks.php:321
+msgid "You are not following anyone yet."
+msgstr ""
+
+#: includes/class-wp-bp-follow-hooks.php:327
+msgid "This user is following some users, but they haven't posted yet."
+msgstr ""
+
+#: includes/class-wp-bp-follow-hooks.php:329
+msgid "This user isn't following anyone yet."
+msgstr ""
+
+#: includes/class-wp-bp-follow-notifications.php:42
+#: includes/class-wp-bp-follow-notifications.php:158
+#, php-format
+msgid "%s is now following you"
+msgstr ""
+
+#: includes/class-wp-bp-follow-notifications.php:45
+#, php-format
+msgid "%d more users are now following you"
+msgstr ""
+
+#: includes/class-wp-bp-follow-notifications.php:160
+#, php-format
+msgid "%s is now following your activity. To view %s's profile: %s"
+msgstr ""
+
+#: includes/class-wp-bp-follow-notifications.php:165
+#, php-format
+msgid "  To disable these notifications please log in and go to: %s"
+msgstr ""
+
+#: includes/class-wp-bp-follow-notifications.php:452
+#, php-format
+msgid "%s posted a new post "
+msgstr ""
+
+#: includes/class-wp-bp-follow-notifications.php:453
+#, php-format
+msgid "%s is posted a new post. To view %s's post: %s"
+msgstr ""
+
+#: includes/class-wp-bp-follow-screens.php:162
+msgid "Order By:"
+msgstr ""
+
+#: includes/class-wp-bp-follow-screens.php:164
+msgid "Last Active"
+msgstr ""
+
+#: includes/class-wp-bp-follow-screens.php:165
+msgid "Newest Registered"
+msgstr ""
+
+#: includes/class-wp-bp-follow-screens.php:168
+msgid "Alphabetical"
+msgstr ""
+
+#: includes/class-wp-bp-follow-template-tags.php:97
+msgid "Unfollow"
+msgstr ""
+
+#: wp-bp-follow.php:53
+msgid ""
+"WPBP Follow plugin can not be activated because to work it, BuddyPress "
+"plugin must be activated"
+msgstr ""
