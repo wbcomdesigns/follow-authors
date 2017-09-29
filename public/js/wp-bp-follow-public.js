@@ -34,16 +34,25 @@
         var groupMemberLoop = $("#member-list").parent();
 
         profileHeader.on("click", ".follow-button a", function () {
+            $(this).fadeOut('slow', function(){
+                $(this).fadeIn('slow');
+            });
             wp_bp_follow_button_action($(this), 'profile');
             return false;
         });
 
         memberLoop.on("click", ".follow-button a", function () {
+             $(this).fadeOut('slow', function(){
+                $(this).fadeIn('slow');
+            });
             wp_bp_follow_button_action($(this), 'member-loop');
             return false;
         });
 
         groupMemberLoop.on("click", ".follow-button a", function () {
+             $(this).fadeOut('slow', function(){
+                $(this).fadeIn('slow');
+            });
             wp_bp_follow_button_action($(this));
             return false;
         });
