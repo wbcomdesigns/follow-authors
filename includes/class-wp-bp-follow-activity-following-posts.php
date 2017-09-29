@@ -18,7 +18,7 @@
                         $aname = $author_obj->nickname;
                     }
                     echo '<div class="wbf-following-post-author-title"><h3>';
-					_e('Post By: ', WPBP_FOLLOW_DOMAIN );
+					_e('Posts By: ', WPBP_FOLLOW_DOMAIN );
 					echo '<a href="' . bp_core_get_user_domain($uid) . '"><i>' . $aname . '</i></a></h3></div>';
                     if (!empty($has_fav[$current_user_id]['author_ids']) && in_array($uid, $has_fav[$current_user_id]['author_ids'])) {
                         echo '<div class="wbf-following-post-author-favorits-stop"><a href="javascript:void(0)" id="wbf-following-post-author-favorits-stop-' . $uid . '" class="wbf-following-post-author-favorits" data-current_user_id="' . $current_user_id . '" data-author_id="' . $uid . '">';
@@ -40,7 +40,7 @@
                                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                                     <div class="wbf-author-post">
                                         <a href="<?php the_permalink(); ?>">
-                                            <div class="wbf-col6 wbf-img-col wbf-circular"> 
+                                            <div class="wbf-col6 wbf-img-col wbf-circular">
                                                 <?php
                                                 if (has_post_thumbnail()) {
                                                     the_post_thumbnail('thumbnail');
@@ -51,7 +51,7 @@
                                                 }
                                                 ?>
                                             </div>
-                                            <div class="wbf-col6 wbi-ytd-caption">                
+                                            <div class="wbf-col6 wbi-ytd-caption">
                                                 <h2 class="wbf-ellipsis"><?php echo strlen(get_the_title()) > 40 ? substr(get_the_title(), 0, 40) . "..." : get_the_title(); ?></h2>
                                                 <div class="wbf-authorpost-content">
                                                     <?php
@@ -84,7 +84,7 @@
                     echo '</div>';
                 }
             } else {
-				_e('You have not following any user.', WPBP_FOLLOW_DOMAIN );               
+				_e('You have not following any user.', WPBP_FOLLOW_DOMAIN );
             }
             ?>
         </main><!-- #main -->
