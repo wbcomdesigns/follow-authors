@@ -17,19 +17,19 @@
                     if(empty($aname)){
                         $aname = $author_obj->nickname;
                     }
-                    echo '<div class="wbf-following-post-author-title"><h3>';
+                    echo '<div class="wbf-row"><div class="wbf-following-post-author-title wbf-col-9"><h3>';
 					_e('Posts By: ', WPBP_FOLLOW_DOMAIN );
 					echo '<a href="' . bp_core_get_user_domain($uid) . '"><i>' . $aname . '</i></a></h3></div>';
                     if (!empty($has_fav[$current_user_id]['author_ids']) && in_array($uid, $has_fav[$current_user_id]['author_ids'])) {
-                        echo '<div class="wbf-following-post-author-favorits-stop"><a href="javascript:void(0)" id="wbf-following-post-author-favorits-stop-' . $uid . '" class="wbf-following-post-author-favorits" data-current_user_id="' . $current_user_id . '" data-author_id="' . $uid . '">';
+                        echo '<div class="wbf-following-post-author-favorits-stop wbf-col-3"><a href="javascript:void(0)" id="wbf-following-post-author-favorits-stop-' . $uid . '" class="wbf-following-post-author-favorits" data-current_user_id="' . $current_user_id . '" data-author_id="' . $uid . '">';
 						_e('Remove Favourite', WPBP_FOLLOW_DOMAIN );
-						echo '</a></div>';
+						echo '</a><i class="fa fa-refresh fa-spin fa-following-spinner fa-spinner fa-fw"></i><span class="sr-only">Loading...</span></div>';
                     } else {
-                        echo '<div class="wbf-following-post-author-favorits-start"><a href="javascript:void(0)" id="wbf-following-post-author-favorits-start-' . $uid . '" class="wbf-following-post-author-favorits" data-current_user_id="' . $current_user_id . '" data-author_id="' . $uid . '">';
+                        echo '<div class="wbf-following-post-author-favorits-start wbf-col-3"><a href="javascript:void(0)" id="wbf-following-post-author-favorits-start-' . $uid . '" class="wbf-following-post-author-favorits" data-current_user_id="' . $current_user_id . '" data-author_id="' . $uid . '">';
 						_e( 'Add Favourite', WPBP_FOLLOW_DOMAIN );
-						echo '</a></div>';
+						echo '</a><i class="fa fa-refresh fa-spin fa-following-spinner fa-spinner fa-fw"></i><spn class="sr-only">Loading...</span></div>';
                     }
-                    echo '<div id="wbi-content">';
+                    echo '</div><div id="wbi-content">';
                     $query = new WP_Query(array('author' => $uid));
                     if ($query->have_posts()) {
                         while ($query->have_posts()) {
@@ -60,11 +60,12 @@
                                                 </div>
                                                 <div class="wbi-row">
                                                     <div class="wbf-authorpost">
-                                                        <p> <?php _e('by ', WPBP_FOLLOW_DOMAIN );
-														echo $author_obj->first_name . ' ' . $author_obj->last_name; ?></p>
+                                                        <p> <i class="fa fa-pencil following-page-icon" aria-hidden="true"></i>
+                                                            <?php _e('by ', WPBP_FOLLOW_DOMAIN );
+														    echo $author_obj->first_name . ' ' . $author_obj->last_name; ?></p>
                                                     </div>
                                                     <div class="wbf-authorpost">
-                                                        <p><i class="glyphicon glyphicon-time"></i><?php echo get_the_date('d-m-Y', get_the_ID()); ?></p>
+                                                        <p><i class="fa fa-calendar following-page-icon" aria-hidden="true"></i><?php echo get_the_date('d-m-Y', get_the_ID()); ?></p>
                                                     </div>
                                                 </div>
                                             </div>

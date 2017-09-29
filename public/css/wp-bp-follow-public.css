@@ -3,6 +3,12 @@
  * included in this file.
  */
  /*** responsive css column classes ***/
+
+ @font-face {
+    font-family: FontAwesome;
+    src: url('../fonts/FontAwesome.otf');
+}
+
  [class*="wbf-col-"] {
     float: left;
     padding: 10px 0;
@@ -157,12 +163,9 @@
 }
 .wbf-following-post-author-title {
     float: left;
-    width: 80.8%;
 }
 /*Circular-thumbnail*/
 .wbf-following-post-author-favorits-stop,.wbf-following-post-author-favorits-start {
-    padding: 3px;
-    width: 19.2%;
     overflow: hidden;
 }
 .wbf-following-post-author-favorits-stop a,.wbf-following-post-author-favorits-start a{
@@ -187,6 +190,15 @@
     border-radius: 100%;
 }
 
+.following-page-icon {
+    margin-right: 5px;
+}
+
+.fa-following-spinner {
+    display: none;
+    margin-left: 5px;
+}
+
 @media( max-width: 767px ) {
     .wbf-following-post-author-title, .wbf-following-post-author-favorits-start {
         width: 100%;
@@ -194,5 +206,4 @@
     .wbf-following-post-author-title h3, .wbf-following-post-author-favorits-start, .following-img, .wbf-ellipsis {
         text-align: center;
     }
-
 }

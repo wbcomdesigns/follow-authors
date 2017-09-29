@@ -57,7 +57,7 @@
             return false;
         });
 
-        function wp_bp_follow_button_action(scope, context) {		
+        function wp_bp_follow_button_action(scope, context) {
             var link = scope;
             var uid = link.attr('id');
             var nonce = link.attr('href');
@@ -109,7 +109,7 @@
                         } else if (action == 'follow') {
                             count_wrapper.text((count_wrapper.text() >> 0) + 1);
                         }
-                    }					
+                    }
                     $(this).fadeIn(200);
                 });
             });
@@ -117,24 +117,28 @@
         $("[id^='wbf-following-post-author-favorits-start']").on('click', function () {
             var author_id = $(this).data().author_id;
             var current_user_id = $(this).data().current_user_id;
+            jQuery('.fa-following-spinner').show();
             var data = {
                 action: 'wp_bp_follow_fav_author_start',
                 'author_id': author_id,
                 'current_user_id': current_user_id
             };
             $.post(wp_bp_follow_ajax_obj.ajaxurl, data, function (response) {
+                jQuery('.fa-following-spinner').hide();
                 location.reload();
             });
         });
         $("[id^='wbf-following-post-author-favorits-stop']").on('click', function () {
             var author_id = $(this).data().author_id;
             var current_user_id = $(this).data().current_user_id;
+            jQuery('.fa-following-spinner').show();
             var data = {
                 action: 'wp_bp_follow_fav_author_stop',
                 'author_id': author_id,
                 'current_user_id': current_user_id
             };
             $.post(wp_bp_follow_ajax_obj.ajaxurl, data, function (response) {
+                jQuery('.fa-following-spinner').hide();
                 location.reload();
             });
         });
