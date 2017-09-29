@@ -29,18 +29,17 @@
 						_e( 'Add Favourite', WPBP_FOLLOW_DOMAIN );
 						echo '</a></div>';
                     }
-                    echo '<hr>';
                     echo '<div id="wbi-content">';
                     $query = new WP_Query(array('author' => $uid));
                     if ($query->have_posts()) {
                         while ($query->have_posts()) {
                             $query->the_post();
                             ?>
-                            <div class="wbf-article-content">
+                            <div class="wbf-article-content wbf-row">
                                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                                     <div class="wbf-author-post">
                                         <a href="<?php the_permalink(); ?>">
-                                            <div class="wbf-col6 wbf-img-col wbf-circular">
+                                            <div class="wbf-col-3 following-img">
                                                 <?php
                                                 if (has_post_thumbnail()) {
                                                     the_post_thumbnail('thumbnail');
@@ -51,11 +50,12 @@
                                                 }
                                                 ?>
                                             </div>
-                                            <div class="wbf-col6 wbi-ytd-caption">
+                                            <div class="wbf-col-9">
                                                 <h2 class="wbf-ellipsis"><?php echo strlen(get_the_title()) > 40 ? substr(get_the_title(), 0, 40) . "..." : get_the_title(); ?></h2>
                                                 <div class="wbf-authorpost-content">
                                                     <?php
-                                                    echo strlen(get_the_excerpt()) > 60 ? substr(wordwrap(get_the_excerpt(), 60, "<br />\n"), 0, 100) . '...' : get_the_excerpt();
+                                                        the_excerpt();
+                                                    //echo strlen(get_the_excerpt()) > 60 ? substr(wordwrap(get_the_excerpt(), 60, "<br />\n"), 0, 100) . '...' : get_the_excerpt();
                                                     ?>
                                                 </div>
                                                 <div class="wbi-row">
@@ -91,6 +91,5 @@
     </div><!-- #primary -->
 </div><!-- .wrap -->
 <?php
-get_sidebar();
 get_footer();
 

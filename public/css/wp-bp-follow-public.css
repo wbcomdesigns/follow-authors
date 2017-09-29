@@ -2,6 +2,76 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
+ /*** responsive css column classes ***/
+ [class*="wbf-col-"] {
+    float: left;
+    padding: 10px 0;
+    overflow: hidden;
+ }
+
+.wbf-row {
+    clear: both;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+    padding-bottom: 5px;
+}
+
+.wbf-col-1 {
+    width: 8.33%;
+}
+
+.wbf-col-2 {
+    width: 16.66%;
+}
+
+.wbf-col-3 {
+    width: 25%;
+}
+
+.wbf-col-4 {
+    width: 33.33%;
+}
+
+.wbf-col-5 {
+    width: 41.66%;
+}
+
+.wbf-col-6 {
+    width: 50%;
+}
+
+.wbf-col-7 {
+    width: 58.33%;
+}
+
+.wbf-col-8 {
+    width: 66.66%;
+}
+
+.wbf-col-9 {
+    width: 75%;
+}
+
+.wbf-col-10 {
+    width: 83.33%;
+}
+
+.wbf-col-11 {
+    width: 91.66%;
+}
+
+.wbf-col-12 {
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    [class*="wbf-col-"] {
+        width: 100%;
+    }
+}
+
+/*** responsive css column classes end ***/
+
 .follow-button.follow-button {
     margin-left: 5px !important;
 }
@@ -110,3 +180,19 @@
     background: #f3f1f1;
 }
 /*WBF Following Posts*/
+
+.following-img img{
+    height: 100px;
+    max-width: 100px;
+    border-radius: 100%;
+}
+
+@media( max-width: 767px ) {
+    .wbf-following-post-author-title, .wbf-following-post-author-favorits-start {
+        width: 100%;
+    }
+    .wbf-following-post-author-title h3, .wbf-following-post-author-favorits-start, .following-img, .wbf-ellipsis {
+        text-align: center;
+    }
+
+}
