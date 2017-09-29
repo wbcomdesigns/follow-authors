@@ -42,7 +42,7 @@ function wp_bp_follow_format_notifications($action, $item_id, $secondary_item_id
 				$follower = bp_core_get_user_displayname($item_id);
                 $text = __(" $follower is now following you", WPBP_FOLLOW_DOMAIN );
                 $link = bp_core_get_user_domain($item_id) . '?wpbpf_read';
-            } else {				
+            } else {
                 $text = __(" $total_items more users are now following you", WPBP_FOLLOW_DOMAIN );
 
                 if (bp_is_active('notifications')) {
@@ -257,7 +257,7 @@ function bp_custom_format_buddypress_notifications($action, $item_id, $secondary
 			$content_custom_title = esc_attr($custom_title);
 			$content_custom_text  = esc_html($custom_text);
 			$content = __("<a href= '$content_custom_link' title= '$content_custom_title'> $content_custom_text </a>", '');
-            $return = apply_filters('new_favourite_filter', 'add fav.' );
+            $return = apply_filters('new_favourite_filter', $content );
 
             // Deprecated BuddyBar
         } else {
@@ -265,9 +265,8 @@ function bp_custom_format_buddypress_notifications($action, $item_id, $secondary
                 'text' => $custom_text,
                 'link' => $custom_link
                     ), $custom_link, (int) $total_items, $custom_text, $custom_title);
-					//echo "<pre>"; print_r( $return ); echo "</pre>"; 
         }
-		
+
         return $return;
     }
     if ('new_favourite_post' === $action) {
@@ -277,7 +276,7 @@ function bp_custom_format_buddypress_notifications($action, $item_id, $secondary
         $custom_title = get_the_author_meta('display_name', $post_info->post_author) . ' posted a new post ' . get_the_title($item_id);
         $custom_link = get_post_permalink($item_id) . '&wpbpfav_posts_read';
         $custom_text = get_the_author_meta('display_name', $post_info->post_author) . ' posted a new post ' . get_the_title($item_id);
-		
+
         // WordPress Toolbar
         if ('string' === $format) {
             $return = apply_filters('new_favourite_post_filter', '<a href="' . esc_url($custom_link) . '" title="' . esc_attr($custom_title) . '">' . esc_html($custom_text) . '</a>', $custom_text, $custom_link);
@@ -289,7 +288,7 @@ function bp_custom_format_buddypress_notifications($action, $item_id, $secondary
                 'link' => $custom_link
                     ), $custom_link, (int) $total_items, $custom_text, $custom_title);
         }
-		
+
         return $return;
     }
 }
@@ -402,7 +401,6 @@ function wp_bp_follow_notifications_remove_queryarg_from_userlink_fav($retval) {
 
         $retval = str_replace('?wpbpfav_read', '', $retval);
     }
-	echo "<pre>"; print_r( $retval ); echo "</pre>mmm";
     return $retval;
 }
 
@@ -424,7 +422,7 @@ function wp_bp_post_published_notification($post_id, $post) {
                         'is_new' => 1,
 						'allow_duplicate'   => true
                     ));
- 
+
                     wp_bp_follow_new_favourite_posts_email_notification(array(
                         'user_id' => $fav_uid,
                         'item_id' => $post_id
