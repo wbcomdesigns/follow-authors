@@ -117,28 +117,28 @@
         $("[id^='wbf-following-post-author-favorits-start']").on('click', function () {
             var author_id = $(this).data().author_id;
             var current_user_id = $(this).data().current_user_id;
-            jQuery('.fa-following-spinner').show();
+            jQuery(this).next('.fa-following-spinner').show();
             var data = {
                 action: 'wp_bp_follow_fav_author_start',
                 'author_id': author_id,
                 'current_user_id': current_user_id
             };
             $.post(wp_bp_follow_ajax_obj.ajaxurl, data, function (response) {
-                jQuery('.fa-following-spinner').hide();
+                jQuery(this).next('.fa-following-spinner').hide();
                 location.reload();
             });
         });
         $("[id^='wbf-following-post-author-favorits-stop']").on('click', function () {
             var author_id = $(this).data().author_id;
             var current_user_id = $(this).data().current_user_id;
-            jQuery('.fa-following-spinner').show();
+            jQuery(this).next('.fa-following-spinner').show();
             var data = {
                 action: 'wp_bp_follow_fav_author_stop',
                 'author_id': author_id,
                 'current_user_id': current_user_id
             };
             $.post(wp_bp_follow_ajax_obj.ajaxurl, data, function (response) {
-                jQuery('.fa-following-spinner').hide();
+                jQuery(this).next('.fa-following-spinner').hide();
                 location.reload();
             });
         });
