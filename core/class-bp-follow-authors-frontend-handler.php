@@ -73,19 +73,37 @@ if ( ! class_exists( 'BP_Follow_Authors_Frontend_Handler' ) ) :
 			ob_start();
 			$authorID = get_the_author_meta( 'ID' ) ;
             $userID = get_current_user_id();
-            if( class_exists( 'BP_Follow_Component' ) ) {
-                if ( bp_follow_is_following( array( 'leader_id' => $authorID, 'follower_id' => bp_loggedin_user_id() ) ) ) {
-                    $functionToTrigger = 'unfollow';
-                    $follow_unfollow_text = __( 'Unfollow', 'bp-follow-authors' );
-                }
-                else {
-                    $functionToTrigger = 'follow';
-                    $follow_unfollow_text = __( 'Follow', 'bp-follow-authors' );
-                }
+            $follow_text = apply_filters( 'wb_bp_follow_author_follow_text', __( 'Follow', 'bp-follow-authors' ), $authorID, $userID );
+            $unfollow_text = apply_filters( 'wb_bp_follow_author_follow_text', __( 'Unfollow', 'bp-follow-authors' ), $authorID, $userID );
+            if( wb_bp_follow_author_is_following( $authorID, $userID ) ) {
+            	$functionToTrigger = 'unfollow';
+                $follow_unfollow_text = $unfollow_text;
             }
             else {
-
+            	$functionToTrigger = 'follow';
+                $follow_unfollow_text = $follow_text;
             }
+            // if( class_exists( 'BP_Follow_Component' ) ) {
+            //     if ( bp_follow_is_following( array( 'leader_id' => $authorID, 'follower_id' => bp_loggedin_user_id() ) ) ) {
+            //         $functionToTrigger = 'unfollow';
+            //         $follow_unfollow_text = __( 'Unfollow', 'bp-follow-authors' );
+            //     }
+            //     else {
+            //         $functionToTrigger = 'follow';
+            //         $follow_unfollow_text = __( 'Follow', 'bp-follow-authors' );
+            //     }
+            // }
+            // else {
+            // 	if ( bp_follow_is_following( array( 'leader_id' => $authorID, 'follower_id' => bp_loggedin_user_id() ) ) ) {
+            //         $functionToTrigger = 'unfollow';
+            //         $follow_unfollow_text = __( 'Unfollow', 'bp-follow-authors' );
+            //     }
+            //     else {
+            //         $functionToTrigger = 'follow';
+            //         $follow_unfollow_text = __( 'Follow', 'bp-follow-authors' );
+            //     }
+            // 	$follow_unfollow_text = __( 'Plan Something', 'bp-follow-authors' );
+            // }
             ?>
             <div class="wbcom-bp-follow-author-btn">
             	<input type="hidden" class="bp_follow_authors_authorID" value="<?php echo $authorID; ?>" />

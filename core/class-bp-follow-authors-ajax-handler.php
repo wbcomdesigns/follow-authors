@@ -87,6 +87,27 @@ if ( ! class_exists( 'BP_Follow_Authors_Ajax_Handler' ) ) :
                                 }
                             }
                         }
+                        else {
+							$wb_bp_followed_authors = get_user_meta( $userID, 'wb_bp_followed_authors', true );
+							if( !empty( $wb_bp_followed_authors ) && is_array( $wb_bp_followed_authors ) ) {
+								if( isset( $wb_bp_followed_authors[$authorID] ) ) {
+									$result = __( 'Already following.', 'bp-follow-authors' );
+								}
+								else {
+									$result = __( 'Error following user.', 'bp-follow-authors' );
+								}
+							}
+							else {
+								$wb_bp_followed_authors = array(
+									$authorID => array(
+										'authorID'	=> $authorID,
+										'time'		=> time()	
+									)
+								);
+								update_user_meta( $userID, 'wb_bp_followed_authors', $wb_bp_followed_authors );
+								$result = __( 'You are now following Dr. Stephen Strange.', 'bp-follow-authors' );
+							}
+						}
                         break;
 
                     case 'unfollow':
@@ -103,13 +124,30 @@ if ( ! class_exists( 'BP_Follow_Authors_Ajax_Handler' ) ) :
                                 }
                             }
                         }
+                        else {
+							$wb_bp_followed_authors = get_user_meta( $userID, 'wb_bp_followed_authors', true );
+							if( !empty( $wb_bp_followed_authors ) && is_array( $wb_bp_followed_authors ) ) {
+								if( isset( $wb_bp_followed_authors[$authorID] ) ) {
+									unset( $wb_bp_followed_authors[$authorID] );
+									update_user_meta( $userID, 'wb_bp_followed_authors', $wb_bp_followed_authors );
+									$result = __( 'You are not following Dr. Stephen Strange anymore.', 'bp-follow-authors' );
+								}
+								else {
+									$result = __( 'Error unfollowing user.', 'bp-follow-authors' );
+								}
+							}
+							else {
+								$result = __( 'Not following.', 'bp-follow-authors' );
+							}
+						}
                         break;
                     
                     default:
                         add_action( 'wbcom_bp_follow_authors_ajax_handler' );
                         break;
                 }
-            }            
+            } 
+            echo $result;          
             wp_die();
         }
 

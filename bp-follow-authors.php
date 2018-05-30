@@ -133,6 +133,7 @@ if ( ! class_exists( 'BP_Follow_Authors' ) ) :
          * @since  1.0.0
          */
         public function includes() {
+            include_once 'global/bp-follow-authors-functions.php'; 
             include_once 'core/class-bp-follow-authors-frontend-handler.php';
             include_once 'core/class-bp-follow-authors-ajax-handler.php';
         }
