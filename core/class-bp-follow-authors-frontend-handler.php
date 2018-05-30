@@ -122,14 +122,14 @@ if ( ! class_exists( 'BP_Follow_Authors_Frontend_Handler' ) ) :
 		public function add_follow_authors_button( $content ) {
             if( !is_user_logged_in() ) {
                 do_action( 'wbcom_bp_follow_authors_logged_out_content' );
-                return;
+                return $content;
             }
 
             $authorID = get_the_author_meta( 'ID' ) ;
             $userID = get_current_user_id();
             if( $userID === $authorID ) {
                 do_action( 'wbcom_bp_follow_authors_same_users_content' );
-                return;
+                return $content;
             }
 
             $custom_html = do_shortcode( '[bp_follow_authors]' );
