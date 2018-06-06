@@ -94,7 +94,12 @@ if ( ! class_exists( 'BP_Follow_Authors_Ajax_Handler' ) ) :
 									$result = __( 'Already following.', 'bp-follow-authors' );
 								}
 								else {
-									$result = __( 'Error following user.', 'bp-follow-authors' );
+									$wb_bp_followed_authors[$authorID] = array(
+										'authorID'	=> $authorID,
+										'time'		=> time()	
+									);
+									update_user_meta( $userID, 'wb_bp_followed_authors', $wb_bp_followed_authors );
+									$result = __( 'You are now following Dr. Stephen Strange.', 'bp-follow-authors' );
 								}
 							}
 							else {

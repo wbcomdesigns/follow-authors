@@ -127,10 +127,10 @@ if ( ! class_exists( 'BP_Follow_Authors_Frontend_Handler' ) ) :
 
             $authorID = get_the_author_meta( 'ID' ) ;
             $userID = get_current_user_id();
-            if( $userID === $authorID ) {
-                do_action( 'wbcom_bp_follow_authors_same_users_content' );
-                return $content;
-            }
+            // if( $userID === $authorID ) {
+            //     do_action( 'wbcom_bp_follow_authors_same_users_content' );
+            //     return $content;
+            // }
 
             $custom_html = do_shortcode( '[bp_follow_authors]' );
             $content .= $custom_html;
@@ -145,11 +145,11 @@ if ( ! class_exists( 'BP_Follow_Authors_Frontend_Handler' ) ) :
             global $post;
             if ( TRUE || is_a( $post, 'WP_Post' ) && ( has_shortcode( $post->post_content, 'ignify_pap_crm' ) ) ) {
                 wp_register_script(
-                    $handle  = 'bp_follow_authors_js',
-                    $src     = BP_Follow_Authors_PLUGIN_DIR_URL . 'assets/bp-follow-authors.js',
-                    $deps    = array( 'jquery' ),
-                    $ver     = time(),
-                    $in_footer = true
+                    'bp_follow_authors_js',
+                    BP_Follow_Authors_PLUGIN_DIR_URL . 'assets/bp-follow-authors.js',
+                    array( 'jquery' ),
+                    time(),
+                    true
                 );
                 wp_localize_script(
                     'bp_follow_authors_js',
@@ -163,6 +163,13 @@ if ( ! class_exists( 'BP_Follow_Authors_Frontend_Handler' ) ) :
                 );
                 wp_enqueue_script( 'bp_follow_authors_js' );
             }
+            wp_enqueue_style(
+                'bp_follow_authors_css',
+                BP_Follow_Authors_PLUGIN_DIR_URL . 'assets/bp-follow-authors.css',
+                array(),
+                time(),
+                'all'
+            );
         }
 
 	}

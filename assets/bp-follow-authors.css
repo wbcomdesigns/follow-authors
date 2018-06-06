@@ -1,0 +1,17 @@
+
+.wbbpfa-posts-listing .wbbpfa-post-item {
+	/*width: 31%;*/
+	display: inline-block;
+	border: 1px solid #e5e5e5;
+	padding: 10px;
+	margin: 10px 1%;
+}
+
+
+.wbbpfa-posts-listing ul li {
+    display: inline;
+    padding: 5px 10px;
+}
+.wbbpfa-posts-listing ul li.active-tab {
+	border-bottom: 2px solid red;
+}
