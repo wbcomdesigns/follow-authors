@@ -2,7 +2,7 @@
 /**
  * Plugin Name: BP Follow Authors
  * Plugin URI: https://wbcomdesigns.com/downloads/peepso-lifterlms-integration/
- * Description: BP Follow Authors
+ * Description: BP Follow Authors : [bp_followed_author] use this shortcode.
  * Version: 1.0.0
  * Author: Wbcom Designs
  * Author URI: https://wbcomdesigns.com/
